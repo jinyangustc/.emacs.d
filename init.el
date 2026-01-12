@@ -59,6 +59,7 @@
 (require 'init-minibuffer)
 (require 'init-hippie-expand)
 (require 'init-corfu)
+(require 'init-windows)
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
