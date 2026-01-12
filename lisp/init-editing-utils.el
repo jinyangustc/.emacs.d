@@ -54,14 +54,13 @@
   :hook (after-init . mode-line-bell-mode))
 
 ;;; Newline behaviour (see also electric-indent-mode, enabled above)
+;; (defun sanityinc/newline-at-end-of-line ()
+;;   "Move to end of line, enter a newline, and reindent."
+;;   (interactive)
+;;   (move-end-of-line 1)
+;;   (newline-and-indent))
 
-(defun sanityinc/newline-at-end-of-line ()
-  "Move to end of line, enter a newline, and reindent."
-  (interactive)
-  (move-end-of-line 1)
-  (newline-and-indent))
-
-(global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
+;; (global-set-key (kbd "S-<return>") 'sanityinc/newline-at-end-of-line)
 
 (use-package subword
   :diminish subword-mode)
@@ -122,7 +121,7 @@
   :diminish whole-line-or-region-local-mode)
 
 ;; M-^ is inconvenient, so also bind M-j
-(global-set-key (kbd "M-j") 'join-line)
+;; (global-set-key (kbd "M-j") 'join-line)
 
 (use-package highlight-escape-sequences
   :hook (after-init . hes-mode))
@@ -132,6 +131,21 @@
   :init
   (setq which-key-idle-delay 0.5)
   :diminish which-key-mode)
+
+;; https://github.com/bbatsov/crux
+(use-package crux
+  :bind
+  ("C-c o" . crux-open-with)
+  ;; ("C-k" . crux-smart-kill-line)        ; first kill to end of the line, then kill the whole line
+  ("C-," . crux-duplicate-current-line-or-region) ; duplicate the current line or region
+  ;; ("M-o" . crux-other-window-or-switch-buffer)      ; select other win, or switch to most recent buff if only 1 win
+  ("M-S-<return>" . crux-smart-open-line-above)              ; insert an empty line above the current line and indent it
+  ("S-<return>" . crux-smart-open-line)                  ; insert an empty line and indent it
+  ("M-j" . crux-top-join-line) ; join lines
+  ("C-x C-u" . crux-upcase-region)
+  ("C-x C-l" . crux-downcase-region)
+  ("C-x M-c" . crux-capitalize-region))
+
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

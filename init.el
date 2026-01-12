@@ -44,15 +44,17 @@
 (use-package scratch)
 (use-package command-log-mode)
 
-(require 'init-osx-keys)
 (require 'init-themes)
+(require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-dired)
-(require 'init-grep)
 (require 'init-isearch)
+(require 'init-grep)
+(require 'init-ibuffer)
 
 (require 'init-recentf)
 (require 'init-minibuffer)
+(require 'init-corfu)
 
 (require 'init-editing-utils)
 (require 'init-whitespace)

@@ -10,7 +10,15 @@
          "/opt/homebrew/bin/gpg")
     (and (file-executable-p "/usr/local/bin/gpg") "/usr/local/bin/gpg")
     "gpg"))
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(anzu avy cape command-log-mode consult corfu crux dash diff-hl
+          diminish doric-themes exec-path-from-shell gcmh git-link
+          git-modes git-timemachine gnu-elpa-keyring-update
+          highlight-escape-sequences ibuffer-projectile ibuffer-vc
+          magit marginalia mode-line-bell modus-themes move-dup
+          multiple-cursors ns-auto-titlebar orderless
+          rainbow-delimiters rg scratch vertico vlf
+          whitespace-cleanup-mode whole-line-or-region)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
