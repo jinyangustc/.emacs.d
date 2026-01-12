@@ -50,10 +50,14 @@
 (require 'init-dired)
 (require 'init-isearch)
 (require 'init-grep)
+(require 'init-uniquify)
 (require 'init-ibuffer)
+(require 'init-flymake)
+(require 'init-eglot)
 
 (require 'init-recentf)
 (require 'init-minibuffer)
+(require 'init-hippie-expand)
 (require 'init-corfu)
 
 (require 'init-editing-utils)
@@ -63,6 +67,23 @@
 (require 'init-git)
 
 (require 'init-projectile)
+
+;; language modes
+;; (use-package just-mode)
+(use-package just-ts-mode)
+(use-package justl)
+
+(require 'init-spelling)
+(require 'init-misc)
+
+(use-package sudo-edit
+  :bind ("C-c C-r" . sudo-edit))
+
+(use-package shfmt)
+
+(add-hook 'after-init-hook 'global-eldoc-mode)
+
+(require 'init-treesitter)
 
 (provide 'init)
 ;; Local Variables:
