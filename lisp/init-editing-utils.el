@@ -146,6 +146,8 @@
   ("C-x C-l" . crux-downcase-region)
   ("C-x M-c" . crux-capitalize-region))
 
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
