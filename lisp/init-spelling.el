@@ -25,6 +25,15 @@
 
 (use-package flyspell
   :commands flyspell-mode
+  :bind (:map flyspell-mode-map
+              ("C-;" . nil)
+              ("C-," . nil)
+              ("C-c w n" . flyspell-goto-next-error)
+              ("C-c w p" . flyspell-goto-previous-error)
+              ("C-c w c" . flyspell-correct-word-before-point)
+              ("C-c w b" . flyspell-buffer)
+              ("C-c w d" . flyspell-change-dictionary)
+              ("C-c w w" . flyspell-word))
   :hook
   ((prog-mode . flyspell-prog-mode)
    (text-mode . (lambda()
