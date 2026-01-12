@@ -22,7 +22,8 @@
                 multiple-cursors ns-auto-titlebar orderless
                 rainbow-delimiters regex-tool rg ruff-format scratch
                 shfmt sudo-edit switch-window toml-mode vertico vlf
-                whitespace-cleanup-mode whole-line-or-region)))
+                whitespace-cleanup-mode whole-line-or-region
+                yasnippet-snippets)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

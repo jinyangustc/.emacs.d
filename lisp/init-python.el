@@ -12,12 +12,11 @@
 ;; (use-package pip-requirements)
 
 (use-package flymake-ruff
+  :hook (python-mode . sanityinc/flymake-ruff-maybe-enable)
   :config
   (defun sanityinc/flymake-ruff-maybe-enable ()
     (when (executable-find "ruff")
-      (flymake-ruff-load)))
-  (add-hook 'python-mode-hook 'sanityinc/fly-ruff-maybe-enable))
-
+      (flymake-ruff-load))))
 
 (with-eval-after-load 'eglot
   ;; This addition of "ty" has been upstreamed as of Dec 2025, but not
