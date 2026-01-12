@@ -1,0 +1,49 @@
+;;; init-python.el --- Python editing -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
+(setq auto-mode-alist
+      (append '(("SConstruct\\'" . python-mode)
+                ("SConscript\\'" . python-mode))
+              auto-mode-alist))
+
+(setq python-shell-interpreter "python3")
+
+;; (use-package pip-requirements)
+
+(use-package flymake-ruff
+  :config
+  (defun sanityinc/flymake-ruff-maybe-enable ()
+    (when (executable-find "ruff")
+      (flymake-ruff-load)))
+  (add-hook 'python-mode-hook 'sanityinc/fly-ruff-maybe-enable))
+
+
+(with-eval-after-load 'eglot
+  ;; This addition of "ty" has been upstreamed as of Dec 2025, but not
+  ;; yet released in ELPA versions of eglot.
+  (push `((python-mode python-ts-mode)
+          . ,(eglot-alternatives
+              '(("ty" "server")
+                "pylsp"
+                "pyls"
+                ("basedpyright-langserver" "--stdio")
+                ("pyright-langserver" "--stdio")
+                ("pyrefly" "lsp")
+                "jedi-language-server" ("ruff" "server") "ruff-lsp")))
+        eglot-server-programs))
+
+(use-package ruff-format)
+
+(use-package toml-mode
+  :mode ("\\(poetry\\|uv\\)\\.lock\\'" . toml-mode))
+
+(with-eval-after-load 'project
+  (add-to-list 'project-vc-extra-root-markers "pyproject.toml"))
+
+(with-eval-after-load 'projectile
+  (add-to-list 'projectile-project-root-files "pyproject.toml"))
+
+
+(provide 'init-python)
+;;; init-python.el ends here

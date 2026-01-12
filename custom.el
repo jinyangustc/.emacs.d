@@ -14,14 +14,14 @@
    '(ace-window anzu avy cape command-log-mode consult consult-eglot
                 corfu crux dash diff-hl diminish doric-themes embark
                 embark-consult exec-path-from-shell expand-region
-                flymake-flycheck gcmh git-link git-modes
+                flymake-flycheck flymake-ruff gcmh git-link git-modes
                 git-timemachine gnu-elpa-keyring-update
                 highlight-escape-sequences ibuffer-projectile
                 ibuffer-vc info-colors just-mode just-ts-mode justl
                 magit marginalia mode-line-bell modus-themes move-dup
                 multiple-cursors ns-auto-titlebar orderless
-                rainbow-delimiters regex-tool rg scratch shfmt
-                sudo-edit switch-window vertico vlf
+                rainbow-delimiters regex-tool rg ruff-format scratch
+                shfmt sudo-edit switch-window toml-mode vertico vlf
                 whitespace-cleanup-mode whole-line-or-region)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

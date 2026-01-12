@@ -70,6 +70,8 @@
 (require 'init-projectile)
 
 ;; language modes
+(require 'init-compile)
+(require 'init-python)
 ;; (use-package just-mode)
 (use-package just-ts-mode)
 (use-package justl)
