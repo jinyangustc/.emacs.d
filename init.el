@@ -60,6 +60,8 @@
 (require 'init-vc)
 (require 'init-git)
 
+(require 'init-projectile)
+
 (provide 'init)
 ;; Local Variables:
 ;; coding: utf-8

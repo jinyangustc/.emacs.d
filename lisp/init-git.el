@@ -10,6 +10,7 @@
   :bind (("C-x v t" . git-timemachine-toggle)))
 (use-package git-link)
 (use-package magit
+  :bind ("<f5>" . magit-status)
   :config
   (setq-default magit-diff-refine-hunk 'all)
   (setq-default magit-diff-visit-prefer-worktree t))
