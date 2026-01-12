@@ -44,7 +44,6 @@
 (use-package scratch)
 (use-package command-log-mode)
 
-
 (require 'init-osx-keys)
 (require 'init-themes)
 (require 'init-gui-frames)
@@ -56,6 +55,10 @@
 (require 'init-minibuffer)
 
 (require 'init-editing-utils)
+(require 'init-whitespace)
+
+(require 'init-vc)
+(require 'init-git)
 
 (provide 'init)
 ;; Local Variables:

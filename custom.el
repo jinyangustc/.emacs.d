@@ -15,9 +15,9 @@
           exec-path-from-shell gcmh git-link git-modes git-timemachine
           gnu-elpa-keyring-update highlight-escape-sequences magit
           marginalia mode-line-bell modus-themes move-dup
-          multiple-cursors ns-auto-titlebar orderless
+          multiple-cursors ns-auto-titlebar orderless projectile
           rainbow-delimiters rg scratch vertico vlf
-          whole-line-or-region)))
+          whitespace-cleanup-mode whole-line-or-region)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
