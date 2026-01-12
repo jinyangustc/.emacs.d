@@ -35,5 +35,8 @@
   ;; Support a slightly more idiomatic quit binding in re-builder
   (define-key reb-mode-map (kbd "C-c C-k") 'reb-quit))
 
+(setq initial-major-mode 'fundamental-mode
+      initial-scratch-message nil)
+
 (provide 'init-misc)
 ;;; init-misc.el ends here

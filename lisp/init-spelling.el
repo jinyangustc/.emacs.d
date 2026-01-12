@@ -24,6 +24,7 @@
 
 
 (use-package flyspell
+  :diminish flyspell-mode
   :commands flyspell-mode
   :bind (:map flyspell-mode-map
               ("C-;" . nil)

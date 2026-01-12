@@ -81,9 +81,26 @@
 
 (use-package shfmt)
 
-(add-hook 'after-init-hook 'global-eldoc-mode)
+(use-package eldoc
+  :ensure nil
+  :hook (after-init . global-eldoc-mode)
+  :diminish eldoc-mode)
 
 (require 'init-treesitter)
+
+
+;; Emacs server
+(add-hook 'after-init-hook
+          (lambda ()
+            (require 'server)
+            (unless (server-running-p)
+              (server-start))))
+
+
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+(require 'init-locales)
 
 (provide 'init)
 ;; Local Variables:
