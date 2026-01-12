@@ -26,5 +26,10 @@
   ;; Suppress verbose messages
   (setq yas-verbosity 0))
 
+(use-package yasnippet-capf
+  :after cape
+  :config
+  (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+
 (provide 'init-snippets)
 ;;; init-snippets.el ends here
