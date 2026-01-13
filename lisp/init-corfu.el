@@ -29,7 +29,6 @@
 ;; in-buffer completion. It integrates with Corfu or the default completion UI,
 ;; by providing additional backends through completion-at-point-functions.
 (use-package cape
-  :ensure t
   :bind ("C-c p" . cape-prefix-map)
   :init
   ;; Add to the global default value of `completion-at-point-functions' which is
@@ -37,6 +36,18 @@
   (add-hook 'completion-at-point-functions #'cape-dabbrev)
   (add-hook 'completion-at-point-functions #'cape-file)
   (add-hook 'completion-at-point-functions #'cape-keyword))
+
+(defun my/prog-mode-capf-setup ()
+  ;; Make sure we modify the *buffer-local* CAPF list for this buffer.
+  (setq-local completion-at-point-functions completion-at-point-functions)
+
+  ;; Add CAPFs (order matters: earlier = higher priority).
+  (add-to-list 'completion-at-point-functions #'yasnippet-capf)
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword))
+
+(add-hook 'prog-mode-hook #'my/prog-mode-capf-setup)
 
 (provide 'init-corfu)
 ;;; init-corfu.el ends here

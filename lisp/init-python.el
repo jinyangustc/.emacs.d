@@ -43,6 +43,16 @@
 (with-eval-after-load 'projectile
   (add-to-list 'projectile-project-root-files "pyproject.toml"))
 
+(with-eval-after-load 'repeat
+  (defvar my/python-indent-repeat-map
+    (let ((map (make-sparse-keymap)))
+      (define-key map (kbd "<") #'python-indent-shift-left)
+      (define-key map (kbd ">") #'python-indent-shift-right)
+      map)
+    "Repeat map for Python indent shifting.")
+
+  (put 'python-indent-shift-left  'repeat-map 'my/python-indent-repeat-map)
+  (put 'python-indent-shift-right 'repeat-map 'my/python-indent-repeat-map))
 
 (provide 'init-python)
 ;;; init-python.el ends here
