@@ -29,6 +29,7 @@
   :bind (:map flyspell-mode-map
               ("C-;" . nil)
               ("C-," . nil)
+              ("C-." . nil)
               ("C-c w n" . flyspell-goto-next-error)
               ("C-c w p" . flyspell-goto-previous-error)
               ("C-c w c" . flyspell-correct-word-before-point)
