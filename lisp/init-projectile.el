@@ -4,8 +4,8 @@
 
 (use-package projectile
   :hook (after-init . projectile-mode)
-  :bind-keymap ("C-c p" . projectile-command-map)
-  :bind ("M-p" . projectile-find-file)
+  :bind-keymap ("s-p" . projectile-command-map)
+  ;; :bind ("s-p" . projectile-find-file)
   :config
   (setq-default projectile-mode-line-prefix " Proj")
   (when (executable-find "rg")
