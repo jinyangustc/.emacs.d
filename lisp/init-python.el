@@ -7,7 +7,7 @@
                 ("SConscript\\'" . python-mode))
               auto-mode-alist))
 
-(setq python-shell-interpreter "python3")
+;; (setq python-shell-interpreter "python3")
 
 ;; (use-package pip-requirements)
 
@@ -32,7 +32,7 @@
                 "jedi-language-server" ("ruff" "server") "ruff-lsp")))
         eglot-server-programs))
 
-(use-package ruff-format)
+;; (use-package ruff-format)
 
 (use-package toml-mode
   :mode ("\\(poetry\\|uv\\)\\.lock\\'" . toml-mode))
@@ -53,6 +53,24 @@
 
   (put 'python-indent-shift-left  'repeat-map 'my/python-indent-repeat-map)
   (put 'python-indent-shift-right 'repeat-map 'my/python-indent-repeat-map))
+
+
+;; See: https://ddavis.io/blog/python-emacs-4/
+
+(use-package pyvenv)
+
+(defun dd/python-init ()
+  (let* ((project (project-current))
+         (project-root (when project (project-root project)))
+         (venv-path (when project-root
+                      (expand-file-name ".venv" project-root))))
+    (when (and venv-path (file-directory-p venv-path))
+      (make-local-variable 'pyvenv-virtual-env)
+      (pyvenv-activate venv-path))
+    (dd/ruff-format-on-save-mode +1)
+    (dd/ruff-sort-on-save-mode +1)))
+
+(add-hook 'python-base-mode-hook #'dd/python-init)
 
 (provide 'init-python)
 ;;; init-python.el ends here

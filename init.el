@@ -63,6 +63,7 @@
 
 (require 'init-editing-utils)
 (require 'init-whitespace)
+(require 'init-formatter)
 
 (require 'init-vc)
 (require 'init-git)
