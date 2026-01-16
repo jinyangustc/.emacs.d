@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: frontmatter
+# key: frontmatter
+# --
+---
+title: "$1"
+date: ${2:`(format-time-string "%Y-%m-%d")`}
+updated: ${3:`(format-time-string "%Y-%m-%d")`}
+draft: ${4:$$(yas-choose-value '("true" "false"))}
+
+taxonomies:
+  categories:
+  tags:
+
+extra:
+  hidden: ${5:$$(yas-choose-value '("true" "false"))}
+  comment: ${6:$$(yas-choose-value '("false" "true"))}
+---
+$0
