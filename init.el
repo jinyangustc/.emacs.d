@@ -74,6 +74,7 @@
 (require 'init-compile)
 (require 'init-snippets)
 (require 'init-python)
+(require 'init-markdown)
 ;; (use-package just-mode)
 (use-package just-ts-mode)
 (use-package justl)
