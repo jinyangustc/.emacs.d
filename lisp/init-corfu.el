@@ -19,10 +19,10 @@
 
   ;; Enable Corfu
   :config
-  (setq corfu-auto t
-        corfu-auto-delay 0.2
-        corfu-auto-trigger "."
-        corfu-quit-no-match 'separator)
+  ;; (setq corfu-auto t
+  ;;       corfu-auto-delay 0.2
+  ;;       corfu-auto-trigger "."
+  ;;       corfu-quit-no-match 'separator)
   (global-corfu-mode))
 
 ;; Cape, or Completion At Point Extensions, extends the capabilities of
