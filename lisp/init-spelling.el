@@ -60,6 +60,7 @@
 ;;   :bind (:map flyspell-mode-map ("C-c $" . flyspell-correct-wrapper)))
 
 (use-package jinx
+  :diminish jinx-mode
   :hook (emacs-startup . global-jinx-mode)
   :bind (("C-c $" . jinx-correct)
          ("C-M-$" . jinx-languages)))

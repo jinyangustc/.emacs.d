@@ -11,6 +11,7 @@
 ;; abbreviation, YASnippet automatically expands it into a full template, which
 ;; can include placeholders, fields, and dynamic content.
 (use-package yasnippet
+  :diminish yas-minor-mode
   :commands (yas-minor-mode yas-global-mode)
   :hook (after-init . yas-global-mode)
   :custom
