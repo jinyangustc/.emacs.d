@@ -13,7 +13,6 @@
 
 
 (use-package spacious-padding
-  :ensure t
   :config
   ;; These are the default values, but I keep them here for visibility.
   ;; Also check `spacious-padding-subtle-frame-lines'.

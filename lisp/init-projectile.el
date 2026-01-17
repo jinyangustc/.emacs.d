@@ -7,7 +7,10 @@
   :bind-keymap ("s-p" . projectile-command-map)
   ;; :bind ("s-p" . projectile-find-file)
   :config
-  (setq-default projectile-mode-line-prefix " Proj")
+  ;; (setq-default projectile-mode-line-prefix " ")
+  (setq projectile-mode-line-function
+        '(lambda ()
+           (format " P[%s]" (projectile-project-name))))
   (when (executable-find "rg")
     (setq-default projectile-generic-command "rg --files --hidden -0")))
 
