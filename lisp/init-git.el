@@ -18,5 +18,12 @@
 ;; (use-package magit-delta
 ;;   :hook (magit-mode . magit-delta-mode))
 
+(use-package casual
+  :init
+  (casual-ediff-install) ; run this to enable Casual Ediff
+  (add-hook 'ediff-keymap-setup-hook
+            (lambda ()
+            (keymap-set ediff-mode-map "C-o" #'casual-ediff-tmenu))))
+
 (provide 'init-git)
 ;;; init-git.el ends here
