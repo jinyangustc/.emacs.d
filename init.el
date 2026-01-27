@@ -78,6 +78,7 @@
 ;; (use-package just-mode)
 (use-package just-ts-mode)
 (use-package justl)
+(use-package fish-mode)
 
 (require 'init-spelling)
 (require 'init-misc)
