@@ -8,7 +8,7 @@
 ;;; Code:
 
 (use-package winner
-  :ensure nil
+  :straight nil
   :hook (after-init . winner-mode)
   :diminish winner-mode)
 

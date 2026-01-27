@@ -66,7 +66,7 @@
   :diminish subword-mode)
 
 (use-package display-line-numbers-mode
-  :ensure nil
+  :straight nil
   :hook ((prog-mode . display-line-numbers-mode)
          (yaml-mode . display-line-numbers-mode)
          (yaml-ts-mode . display-line-numbers-mode))
@@ -75,7 +75,7 @@
 
 
 (use-package display-fill-column-indicator
-  :ensure nil
+  :straight nil
   :hook (prog-mode . display-fill-column-indicator-mode)
   :config
   (setq-default indicate-buffer-boundaries 'left)

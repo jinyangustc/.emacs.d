@@ -28,7 +28,8 @@
 ;; (require 'init-utils)
 ;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 
-(require 'init-elpa)      ;; Machinery for installing required packages
+;; (require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-straight)
 (require 'init-exec-path) ;; Set up $PATH
 
 ;; general performance tuning
@@ -89,7 +90,7 @@
 (use-package shfmt)
 
 (use-package eldoc
-  :ensure nil
+  :straight nil
   :hook (after-init . global-eldoc-mode)
   :diminish eldoc-mode)
 
