@@ -149,5 +149,20 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+
+(use-package engine-mode
+  :bind-keymap ("M-s b" . engine-mode-prefixed-map)
+  :config
+  (engine-mode t)
+  (defengine google
+    "https://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+    :keybinding "b")
+  (defengine kagi
+    "https://kagi.com/search?q=%s"
+    :keybinding "k")
+  (defengine github
+    "https://github.com/search?ref=simplesearch&q=%s"
+    :keybinding "g"))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
