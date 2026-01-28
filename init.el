@@ -72,6 +72,7 @@
 (require 'init-projectile)
 
 ;; language modes
+(require 'init-gptel)
 (require 'init-compile)
 (require 'init-snippets)
 (require 'init-python)
