@@ -1,5 +1,7 @@
 ;;; init-isearch.el --- isearch settings -*- lexical-binding: t -*-
 ;;; Commentary:
+;;;     "You have no idea how powerful isearch is!":
+;;;     https://emacsredux.com/blog/2025/03/18/you-have-no-idea-how-powerful-isearch-is/
 ;;; Code:
 
 (use-package anzu
