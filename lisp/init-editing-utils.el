@@ -187,5 +187,11 @@ minibuffer, even without explicitly focusing it."
 (global-set-key (kbd "M-l") 'downcase-dwim)
 (global-set-key (kbd "M-c") 'capitalize-dwim)
 
+
+;; disable mouse wheel adjusting font size
+(global-set-key (kbd "<pinch>") 'ignore)
+(global-set-key (kbd "<C-wheel-up>") 'ignore)
+(global-set-key (kbd "<C-wheel-down>") 'ignore)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
