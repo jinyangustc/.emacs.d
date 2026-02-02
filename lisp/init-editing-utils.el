@@ -182,5 +182,10 @@ minibuffer, even without explicitly focusing it."
 
 (global-set-key [remap keyboard-quit] #'er-keyboard-quit)
 
+;; DWIM commands for case changes
+(global-set-key (kbd "M-u") 'upcase-dwim)
+(global-set-key (kbd "M-l") 'downcase-dwim)
+(global-set-key (kbd "M-c") 'capitalize-dwim)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
