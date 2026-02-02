@@ -78,7 +78,12 @@
 (require 'init-python)
 (require 'init-markdown)
 ;; (use-package just-mode)
-(use-package just-ts-mode)
+(use-package just-ts-mode
+  :init
+  (just-ts-mode-install-grammar)
+  :bind
+  (:map just-ts-mode-map
+        ("C-c C-f" . just-ts-format-buffer)))
 (use-package justl)
 (use-package fish-mode)
 
