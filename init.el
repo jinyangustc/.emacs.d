@@ -79,7 +79,7 @@
 (require 'init-markdown)
 ;; (use-package just-mode)
 (use-package just-ts-mode
-  :init
+  :config
   (just-ts-mode-install-grammar)
   :bind
   (:map just-ts-mode-map
