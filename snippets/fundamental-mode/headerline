@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: headerline
+# key: headerline
+# --
+`(let* ((comment (or (yas-choose-value '("#")) "#"))
+        (title (read-string "Header title: "))
+        (total 79)
+        (fixed (+ (length comment) 2 (length title))) ; "# " + title
+        (dashes (- total fixed))
+        (left (/ dashes 2))
+        (right (- dashes left)))
+   (concat
+    comment " "
+    (make-string left ?-)
+    " " title " "
+    (make-string right ?-)))`
