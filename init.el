@@ -87,6 +87,8 @@
 (use-package justl)
 (use-package fish-mode)
 
+(require 'init-tex)
+
 (require 'init-spelling)
 (require 'init-misc)
 
