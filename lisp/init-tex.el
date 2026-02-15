@@ -9,8 +9,6 @@
   :straight auctex
   :hook ((LaTeX-mode . prettify-symbols-mode)
          (LaTex-mode . preview-larger-previews))
-  :bind (:map LaTeX-mode-map
-         ("C-S-e" . latex-math-from-calc))
   :config
   ;; Format math as a Latex string with Calc
   (defun latex-math-from-calc ()
@@ -33,7 +31,9 @@
   (defun preview-larger-previews ()
     (setq preview-scale-function
           (lambda () (* 1.25
-                   (funcall (preview-scale-from-face)))))))
+                        (funcall (preview-scale-from-face))))))
+  (with-eval-after-load 'latex
+    (define-key LaTeX-mode-map (kbd "C-S-e") #'latex-math-from-calc)))
 
 ;; CDLatex integration with YaSnippet: Allow cdlatex tab to work
 ;; inside Yas fields
