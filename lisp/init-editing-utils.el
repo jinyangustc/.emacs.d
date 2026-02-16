@@ -193,5 +193,11 @@ minibuffer, even without explicitly focusing it."
 (global-set-key (kbd "<C-wheel-up>") 'ignore)
 (global-set-key (kbd "<C-wheel-down>") 'ignore)
 
+(defun yank-repeat (arg)
+  "With numerical ARG, repeat last yank ARG times. "
+  (interactive "p*")
+  (dotimes (i arg)
+    (insert (car kill-ring))))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
