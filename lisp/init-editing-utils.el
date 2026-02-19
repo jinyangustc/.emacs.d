@@ -149,6 +149,12 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+;; https://idiomdrottning.org/bad-emacs-defaults
+(use-package dtrt-indent
+  :hook (after-init . dtrt-indent-global-mode)
+  :config
+  (setq dtrt-indent-verbosity 0))
+
 
 (use-package engine-mode
   :bind-keymap ("M-s b" . engine-mode-prefixed-map)

@@ -34,9 +34,6 @@
 
 ;; (use-package ruff-format)
 
-(use-package toml-mode
-  :mode ("\\(poetry\\|uv\\)\\.lock\\'" . toml-mode))
-
 (with-eval-after-load 'project
   (add-to-list 'project-vc-extra-root-markers "pyproject.toml"))
 

@@ -86,6 +86,10 @@
         ("C-c C-f" . just-ts-format-buffer)))
 (use-package justl)
 (use-package fish-mode)
+(use-package toml-mode
+  :hook (toml-mode . (lambda ()
+                       (electric-indent-mode -1)))
+  :mode ("\\(poetry\\|uv\\)\\.lock\\'" . toml-mode))
 
 (require 'init-tex)
 
