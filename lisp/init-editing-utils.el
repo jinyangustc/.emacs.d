@@ -152,6 +152,7 @@
 ;; https://idiomdrottning.org/bad-emacs-defaults
 (use-package dtrt-indent
   :hook (after-init . dtrt-indent-global-mode)
+  :diminish dtrt-indent-mode
   :config
   (setq dtrt-indent-verbosity 0))
 

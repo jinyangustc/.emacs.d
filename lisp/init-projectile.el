@@ -10,7 +10,7 @@
   ;; (setq-default projectile-mode-line-prefix " ")
   (setq projectile-mode-line-function
         '(lambda ()
-           (format " P[%s]" (projectile-project-name))))
+           (format " [%s]" (projectile-project-name))))
   (when (executable-find "rg")
     (setq-default projectile-generic-command "rg --files --hidden -0")))
 

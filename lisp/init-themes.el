@@ -2,35 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package doric-themes
-  :demand t
-  :config
-  (doric-themes-select 'doric-fire)
-  ;; font
-  (set-face-attribute 'default nil :family "Aporetic Serif Mono" :height 180)
-  (set-face-attribute 'variable-pitch nil :family "Aporetic Serif" :height 1.0)
-  (set-face-attribute 'fixed-pitch nil :family "Aporetic Serif Mono" :height 1.0))
-
-
-(use-package spacious-padding
-  :config
-  ;; These are the default values, but I keep them here for visibility.
-  ;; Also check `spacious-padding-subtle-frame-lines'.
-  (setq spacious-padding-subtle-frame-lines t)
-  (setq spacious-padding-widths
-        '( :internal-border-width 15
-           :header-line-width 2
-           :mode-line-width 2
-           :custom-button-width 3
-           :tab-width 4
-           :right-divider-width 30
-           :scroll-bar-width 8
-           :fringe-width 8))
-
-  (spacious-padding-mode 1)
-
-  ;; Set a key binding if you need to toggle spacious padding.
-  (define-key global-map (kbd "<f8>") #'spacious-padding-mode))
+(set-face-attribute 'default nil :family "Aporetic Serif Mono" :height 180)
+(set-face-attribute 'variable-pitch nil :family "Aporetic Serif" :height 1.0)
+(set-face-attribute 'fixed-pitch nil :family "Aporetic Serif Mono" :height 1.0)
 
 ;; (use-package modus-themes
 ;;   :demand t
@@ -51,6 +25,50 @@
 ;;           (t . (regular 1.15))))
 ;;   (setq modus-themes-common-palette-overrides nil)
 ;;   (modus-themes-load-theme 'modus-vivendi-tinted))
+
+(use-package doric-themes
+  :demand t
+  :config
+  (doric-themes-select 'doric-fire))
+
+(use-package spacious-padding
+  :config
+  ;; These are the default values, but I keep them here for visibility.
+  ;; Also check `spacious-padding-subtle-frame-lines'.
+  (setq spacious-padding-subtle-frame-lines nil)
+  (setq spacious-padding-widths
+        '( :internal-border-width 15
+           :header-line-width 0
+           :mode-line-width 0
+           :custom-button-width 1
+           :tab-width 4
+           :right-divider-width 30
+           :scroll-bar-width 8
+           :fringe-width 8))
+  (spacious-padding-mode 1)
+  ;; Set a key binding if you need to toggle spacious padding.
+  (define-key global-map (kbd "<f8>") #'spacious-padding-mode))
+
+;; (use-package minions
+;;   :custom
+;;   (mode-line-modes-delimiters nil)
+;;   (minions-mode-line-lighter " =")
+;;   :config
+;;   (minions-mode +1)
+;;   (force-mode-line-update t))
+
+(use-package moody
+  :config
+  (moody-replace-mode-line-front-space)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode)
+  (setq moody-mode-line-height 28))
+
+(use-package nyan-mode
+  :custom
+  (nyan-bar-length 10)
+  :config
+  (nyan-mode +1))
 
 (provide 'init-themes)
 ;;; init-themes.el ends here
