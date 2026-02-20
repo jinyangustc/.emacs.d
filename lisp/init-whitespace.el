@@ -11,6 +11,7 @@
 ;; (dolist (hook '(prog-mode-hook text-mode-hook conf-mode-hook))
 ;;   (add-hook hook 'sanityinc/show-trailing-whitespace))
 (setq show-trailing-whitespace t)
+(setq require-final-newline t)
 
 (use-package whitespace-cleanup-mode
   :diminish whitespace-cleanup-mode
