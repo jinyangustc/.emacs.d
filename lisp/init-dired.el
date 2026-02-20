@@ -5,6 +5,7 @@
 (setq-default dired-dwim-target t)
 (setq dired-use-ls-dired nil)
 (setq dired-movement-style 'bounded-files)
+(setq dired-vc-rename-file t)
 
 ;; dired: Group directories first
 (with-eval-after-load 'dired
