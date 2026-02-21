@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: iobt_run_metadata
+# key: iobtrun
+# --
+[[runs]]
+run_id = ${1:0}
+label = [${2:"husky"}]
+formation = [${3:"single"}]
+route_id = [${4}]
+vehicle_id = [${5}]
+comment = "${6}"
+start_time = ${7:2024-08-07T09:40:26}
+end_time = ${8:2024-08-07T09:43:06}
+$0
