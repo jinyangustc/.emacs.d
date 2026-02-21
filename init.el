@@ -63,6 +63,7 @@
 (require 'init-windows)
 
 (require 'init-editing-utils)
+(require 'init-tramp)
 (require 'init-whitespace)
 (require 'init-formatter)
 
