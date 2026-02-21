@@ -10,7 +10,11 @@
     :args `("ruff" "format" "--stdin-filename" ,buffer-file-name "-"))
   (reformatter-define dd/ruff-sort
     :program "uvx"
-    :args `("ruff" "check" "--select" "I" "--fix" "--stdin-filename" ,buffer-file-name "-")))
+    :args `("ruff" "check" "--select" "I" "--fix" "--stdin-filename" ,buffer-file-name "-"))
+  (reformatter-define jy/toml-format
+    :program "taplo"
+    :args '("fmt" "-")
+    :lighter " TaploFmt"))
 
 (provide 'init-formatter)
 ;;; init-formatter.el ends here
